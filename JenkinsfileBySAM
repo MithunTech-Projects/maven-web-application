@@ -32,11 +32,16 @@ node
 		}
 	
 	stage('send Email Notification')
-	{
-		emailext body: '''Build:${BRANCH_NAME}
+		{
+			emailext body: '''Build:${BRANCH_NAME}
 
-		Regards,
-		YoungStone Tech''', subject: 'Build Over', to: 'alsamad0786@gmail.com'
-	}
+			Regards,
+			YoungStone Tech''', subject: 'Build Over', to: 'alsamad0786@gmail.com'
+		}
+	
+	stage('Jacoco report')
+		{
+			jacoco deltaBranchCoverage: '80', deltaClassCoverage: '80', deltaComplexityCoverage: '80', deltaLineCoverage: '80', deltaMethodCoverage: '80', maximumBranchCoverage: '80', maximumClassCoverage: '80', maximumComplexityCoverage: '80', maximumLineCoverage: '80', maximumMethodCoverage: '80', minimumBranchCoverage: '80', minimumClassCoverage: '80', minimumComplexityCoverage: '80', minimumLineCoverage: '80', minimumMethodCoverage: '80'
+		}
 	}
 }
