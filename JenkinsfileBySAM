@@ -28,7 +28,7 @@ node
 	stage('Deploy application to Tomcat server')
 		{
 			sshagent(['tomcatPemFileID']) {
-			sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@15.207.19.133:/opt/software/apache-tomcat-9.0.45/webapps"
+			sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@65.0.127.229:/opt/software/apache-tomcat-9.0.45/webapps"
 		}
 	
 	stage('send Email Notification')
