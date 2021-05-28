@@ -1,6 +1,7 @@
 //node
 //node('JenkinsSlave-1')
-node('JenkinsSlave')
+//node('JenkinsSlave')
+node
 {
 	def mavenHome = tool name: "Maven-3.8.1"   
 	
